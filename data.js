@@ -30,49 +30,56 @@ const profileData = {
         {
             school: "Anjuman College Of Engineering & Technology",
             degree: "Bachelor of Technology - BTech, Computer Science and Engineering",
-            date: "Oct 2022 - Oct 2026"
+            date: "Oct 2022 - Oct 2026",
+            details: "CGPA: 7.3/10"
         }
     ],
     skills: [
         "Java",
-        "Core Java",
-        "Advanced Java",
-        "JDBC",
-        "JSP",
-        "Servlet",
+        "Python",
+        "C",
         "Spring Boot",
+        "Spring MVC",
         "Spring Security",
         "Spring Data JPA",
+        "Hibernate",
         "REST APIs",
-        "Firebase",
-        "Postman",
-        "Netlify",
-        "Render",
-        "GitHub",
         "MySQL",
-        "HTML",
-        "CSS",
+        "HTML5",
+        "CSS3",
         "JavaScript",
-
-        "Python",
-        "AI/ML",
+        "React.js (Basics)",
+        "Bootstrap",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Maven",
+        "Docker (Basics)",
+        "VS Code",
+        "IntelliJ IDEA",
         "YOLOv8",
         "OpenCV",
-        "Streamlit",
-        "Arduino IDE",
-
-        "Data Analytics with Python",
-        "Excel",
-        "PowerBI",
-
-
-        "C Language",
-        "Project Management",
-        "Research paper",
-
-        "Intellectual Property"
+        "Pandas",
+        "NumPy",
+        "Arduino IDE"
     ],
     projects: [
+        {
+            title: "Crypto Tracker – Real-Time Price Monitoring",
+            date: "Dec 2025",
+            description: "Built a real-time cryptocurrency tracker where users can enter any coin name and fetch live prices using an external API. Developed REST endpoints and integrated API responses into a dynamic UI using Spring Boot + Thymeleaf. Implemented service-layer logic for API consumption and JSON parsing.",
+            tags: ["Spring Boot", "Thymeleaf", "REST API", "Java", "Railway"],
+            image: "crypto_tracker.png",
+            link: "https://crypto-tracker-app-4.onrender.com/"
+        },
+        {
+            title: "Student Management System",
+            date: "Nov 2025",
+            description: "Developed a web-based system to add, view, update, and manage student records. Built backend APIs using Spring Boot (CRUD operations). Integrated APIs with a simple frontend UI to display real-time student data. Implemented form handling and validation.",
+            tags: ["Spring Boot", "CRUD", "REST API", "MySQL", "Render"],
+            image: "student_management.png",
+            link: "https://student-management-app-7uwo.onrender.com/"
+        },
         {
             title: "Smart Traffic Management System",
             date: "Jan 2025 - May 2025",
@@ -103,6 +110,19 @@ const profileData = {
         }
     ],
     certifications: [
+        {
+            title: "Java Backend Developer",
+            issuer: "GeekforGeeks",
+            date: "Nov 2025",
+            credentialId: "f179ba7f01f01ab279e0f61ac29aa4c5"
+        },
+        {
+            title: "Java Full Stack Developer",
+            issuer: "ProfoundEdutech",
+            date: "May 2025",
+            credentialId: ""
+        },
+
         {
             title: "The Complete Python Developer Certification Course",
             issuer: "Udemy",

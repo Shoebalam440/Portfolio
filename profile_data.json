@@ -26,29 +26,31 @@
     {
       "school": "Anjuman College Of Engineering & Technology",
       "degree": "Bachelor of Technology - BTech, Computer Science and Engineering",
-      "date": "Oct 2022 - Oct 2026"
+      "date": "Oct 2022 - Oct 2026",
+      "details": "CGPA: 7.3/10"
     }
   ],
   "skills": [
-    "Java",
-    "Spring Boot",
-    "MySQL",
-    "REST APIs",
-    "Core Java",
-    "C (Programming Language)",
-    "Python",
-    "React.js",
-    "MongoDB",
-    "Socket.io",
-    "Netlify",
-    "Render",
-    "Git",
-    "Project Management",
-    "Research paper",
-    "Data Analytics with Python",
-    "Intellectual Property"
+    "Java", "Python", "C", "Spring Boot", "Spring MVC", "Spring Security", "Spring Data JPA", "Hibernate", 
+    "REST APIs", "MySQL", "HTML5", "CSS3", "JavaScript", "React.js (Basics)", "Bootstrap", 
+    "Git", "GitHub", "Postman", "Maven", "Docker (Basics)", "VS Code", "IntelliJ IDEA", 
+    "YOLOv8", "OpenCV", "Pandas", "NumPy", "Arduino IDE"
   ],
   "projects": [
+    {
+      "title": "Crypto Tracker – Real-Time Price Monitoring",
+      "date": "Dec 2025",
+      "description": "Built a real-time cryptocurrency tracker where users can enter any coin name and fetch live prices using an external API. Developed REST endpoints and integrated API responses into a dynamic UI using Spring Boot + Thymeleaf. Implemented service-layer logic for API consumption and JSON parsing.",
+      "tags": ["Spring Boot", "Thymeleaf", "REST API", "Java", "Railway"],
+      "image": "crypto_tracker.png"
+    },
+    {
+      "title": "Student Management System",
+      "date": "Nov 2025",
+      "description": "Developed a web-based system to add, view, update, and manage student records. Built backend APIs using Spring Boot (CRUD operations). Integrated APIs with a simple frontend UI to display real-time student data. Implemented form handling and validation.",
+      "tags": ["Spring Boot", "CRUD", "REST API", "MySQL", "Render"],
+      "image": "student_management.png"
+    },
     {
       "title": "Smart Traffic Management System",
       "date": "Jan 2025 - May 2025",
@@ -63,6 +65,12 @@
       "title": "Patent Gem",
       "date": "Feb 2025",
       "description": "We received the prize and recognized it as a patent gem in Advantage Vidarbha 2K25 for our team project Social Forensic."
+    },
+     {
+      "title": "Landslide Prediction System",
+        "date": "Jul 2025 - Nov 2025",
+        "description": "A real-time landslide monitoring system that uses sensors and AI to detect risk and give early alerts for safer disaster response.",
+        "tags": ["AI/ML", "Python", "Arduino", "Streamlit"]
     }
   ],
   "certifications": [

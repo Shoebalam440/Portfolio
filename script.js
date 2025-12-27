@@ -41,12 +41,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Render Projects
     const projectsContainer = document.getElementById('projects-list');
-    profileData.projects.forEach(project => {
+    profileData.projects.forEach((project, index) => {
         const card = document.createElement('div');
         card.className = 'project-card';
+        // Add staggering delay via inline style if needed, or rely on CSS nth-child
+        card.style.animationDelay = `${0.1 + (index * 0.1)}s`;
 
         // Generate tags HTML
         const tagsHtml = project.tags ? project.tags.map(tag => `<span class="project-tag">#${tag}</span>`).join('') : '';
+
+        // Generate External Link HTML
+        // If a link exists, show an external-link icon in the header
+        const linkHtml = project.link
+            ? `<a href="${project.link}" target="_blank" class="project-link" title="View Live Demo"><i data-lucide="external-link"></i></a>`
+            : '';
 
         card.innerHTML = `
             <div class="project-image">
@@ -55,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="project-content">
                 <div class="project-header">
                     <i data-lucide="folder" class="folder-icon"></i>
+                    ${linkHtml}
                 </div>
                 <h3 class="project-title">${project.title}</h3>
                 <p class="project-desc">${project.description}</p>
