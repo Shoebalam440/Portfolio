@@ -15,12 +15,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Render Skills
     const skillsContainer = document.getElementById('skills-list');
-    profileData.skills.forEach(skill => {
-        const span = document.createElement('span');
-        span.className = 'skill-tag';
-        span.innerHTML = `<i data-lucide="check-circle" class="skill-icon"></i> ${skill}`;
-        skillsContainer.appendChild(span);
-    });
+
+    // Icon Mapping for Categories
+    const categoryIcons = {
+        "Languages": "code-2",
+        "Backend & Frameworks": "database",
+        "Tools & DevOps": "wrench",
+        "AI/ML & Data Science": "brain-circuit"
+    };
+
+    // Check if skills is an array (old format) or object (new format)
+    if (Array.isArray(profileData.skills)) {
+        // Fallback for flat array
+        profileData.skills.forEach(skill => {
+            const span = document.createElement('span');
+            span.className = 'skill-tag';
+            span.innerHTML = `<i data-lucide="check-circle" class="skill-icon"></i> ${skill}`;
+            skillsContainer.appendChild(span);
+        });
+    } else {
+        // New Categorized Format
+        for (const [category, skills] of Object.entries(profileData.skills)) {
+            const categoryCard = document.createElement('div');
+            categoryCard.className = 'skill-category-card reveal spotlight-card';
+
+            // Spotlight Effect Listener
+            categoryCard.addEventListener('mousemove', (e) => {
+                const rect = categoryCard.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                categoryCard.style.setProperty('--mouse-x', `${x}px`);
+                categoryCard.style.setProperty('--mouse-y', `${y}px`);
+            });
+
+            const iconName = categoryIcons[category] || "folder";
+
+            const categoryTitle = document.createElement('h3');
+            categoryTitle.className = 'skill-category-title';
+            categoryTitle.innerHTML = `<i data-lucide="${iconName}" class="category-icon"></i> ${category}`;
+
+            const skillTagsContainer = document.createElement('div');
+            skillTagsContainer.className = 'skill-tags-container rich-grid';
+
+            skills.forEach(skill => {
+                const skillCard = document.createElement('div');
+                skillCard.className = 'rich-skill-card';
+
+                skillCard.innerHTML = `
+                    <div class="rich-skill-icon">
+                        <img src="${skill.icon}" alt="${skill.name}">
+                    </div>
+                    <div class="rich-skill-info">
+                        <h4>${skill.name}</h4>
+                        <p>${skill.desc}</p>
+                    </div>
+                `;
+
+                skillTagsContainer.appendChild(skillCard);
+            });
+
+            categoryCard.appendChild(categoryTitle);
+            categoryCard.appendChild(skillTagsContainer);
+            skillsContainer.appendChild(categoryCard);
+        }
+    }
 
     // Render Experience
     const experienceContainer = document.getElementById('experience-list');
@@ -100,8 +158,117 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Update Contact Email
+    // Update Contact Links
     const contactBtn = document.getElementById('contact-btn');
+    const linkedinBtn = document.getElementById('linkedin-btn');
+    const githubBtn = document.getElementById('github-btn');
+
     if (profileData.personalInfo.email) {
         contactBtn.href = `mailto:${profileData.personalInfo.email}`;
     }
+
+    if (profileData.personalInfo.linkedin) {
+        linkedinBtn.href = profileData.personalInfo.linkedin;
+    }
+
+    if (profileData.personalInfo.github) {
+        githubBtn.href = profileData.personalInfo.github;
+    }
+
+    // --- Visual Enhancements ---
+
+    // 1. Typing Effect
+    const headlineElement = document.getElementById('headline');
+    const headlineText = profileData.personalInfo.headline || "I build things for the web.";
+    headlineElement.textContent = ''; // Clear initial text
+
+    let charIndex = 0;
+    const typeSpeed = 100; // ms per character
+
+    function typeWriter() {
+        if (charIndex < headlineText.length) {
+            headlineElement.textContent += headlineText.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, typeSpeed);
+        } else {
+            // Add blinking cursor after typing finishes
+            const cursor = document.createElement('span');
+            cursor.className = 'typing-cursor';
+            headlineElement.appendChild(cursor);
+        }
+    }
+
+    // Start typing after a small delay
+    setTimeout(typeWriter, 1000);
+
+
+    // 2. Background Floating Shapes
+    const heroBg = document.getElementById('hero-background');
+    if (heroBg) {
+        const shapeCount = 5;
+        for (let i = 0; i < shapeCount; i++) {
+            const shape = document.createElement('div');
+            shape.className = 'floating-shape';
+
+            // Random size
+            const size = Math.random() * 200 + 100; // 100px to 300px
+            shape.style.width = `${size}px`;
+            shape.style.height = `${size}px`;
+
+            // Random position
+            shape.style.left = `${Math.random() * 100}%`;
+            shape.style.top = `${Math.random() * 100}%`;
+
+            // Random animation delay and duration
+            shape.style.animationDelay = `${Math.random() * 5}s`;
+            shape.style.animationDuration = `${15 + Math.random() * 15}s`;
+
+            heroBg.appendChild(shape);
+        }
+    }
+
+    // 3. Scroll Reveal
+    const revealElements = document.querySelectorAll('section h2, .about-grid, .timeline-item, .project-card, .cert-card, .skill-category-card');
+
+    // Add reveal class initially
+    revealElements.forEach(el => el.classList.add('reveal'));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // 4. Magnetic Buttons (Subtle effect)
+    const buttons = document.querySelectorAll('.btn');
+
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Calculate distance from center
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const deltaX = (x - centerX) / 8; // Divide by factor to limit movement
+            const deltaY = (y - centerY) / 8;
+
+            btn.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = 'translate(0, 0)';
+        });
+    });
+
 });

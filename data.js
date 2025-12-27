@@ -34,35 +34,36 @@ const profileData = {
             details: "CGPA: 7.3/10"
         }
     ],
-    skills: [
-        "Java",
-        "Python",
-        "C",
-        "Spring Boot",
-        "Spring MVC",
-        "Spring Security",
-        "Spring Data JPA",
-        "Hibernate",
-        "REST APIs",
-        "MySQL",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "React.js (Basics)",
-        "Bootstrap",
-        "Git",
-        "GitHub",
-        "Postman",
-        "Maven",
-        "Docker (Basics)",
-        "VS Code",
-        "IntelliJ IDEA",
-        "YOLOv8",
-        "OpenCV",
-        "Pandas",
-        "NumPy",
-        "Arduino IDE"
-    ],
+    skills: {
+        "Languages": [
+            { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", desc: "Core language for robust backend systems." },
+            { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", desc: "Versatile language for AI/ML and scripting." },
+            { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg", desc: "Foundation for system-level programming." },
+            { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", desc: "Structure of the web." },
+            { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", desc: "Styling and layout for modern UI." }
+        ],
+        "Backend & Frameworks": [
+            { name: "Spring Boot", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", desc: "Rapid application development framework." },
+            { name: "Spring MVC", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", desc: "Model-View-Controller architecture." },
+            { name: "Spring Security", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", desc: "Authentication and access control." },
+            { name: "Spring Data JPA", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", desc: "Simplified database interaction." },
+            { name: "Hibernate", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg", desc: "ORM for mapping Java objects to DB." },
+            { name: "REST APIs", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/networkx/networkx-original.svg", desc: "Designing scalable web services." },
+            { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", desc: "Relational database management." }
+        ],
+        "Tools & DevOps": [
+            { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", desc: "Version control and collaboration." },
+            { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", desc: "API testing and documentation." },
+            { name: "Maven", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg", desc: "Dependency management and build tool." },
+            { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", desc: "Code editor of choice." },
+            { name: "IntelliJ IDEA", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg", desc: "Powerful Java IDE." }
+        ],
+        "AI/ML & Data Science": [
+            { name: "YOLOv8", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg", desc: "Real-time object detection." },
+            { name: "OpenCV", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg", desc: "Computer vision library." },
+            { name: "Arduino IDE", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg", desc: "IoT and hardware programming." }
+        ]
+    },
     projects: [
         {
             title: "Crypto Tracker – Real-Time Price Monitoring",
@@ -119,7 +120,7 @@ const profileData = {
         {
             title: "Java Full Stack Developer",
             issuer: "ProfoundEdutech",
-            date: "May 2025",
+            date: "Oct 2025",
             credentialId: ""
         },
 
