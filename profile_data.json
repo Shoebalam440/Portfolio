@@ -31,24 +31,52 @@
     }
   ],
   "skills": [
-    "Java", "Python", "C", "Spring Boot", "Spring MVC", "Spring Security", "Spring Data JPA", "Hibernate", 
-    "REST APIs", "MySQL", "HTML5", "CSS3", "JavaScript", "React.js (Basics)", "Bootstrap", 
-    "Git", "GitHub", "Postman", "Maven", "Docker (Basics)", "VS Code", "IntelliJ IDEA", 
-    "YOLOv8", "OpenCV", "Pandas", "NumPy", "Arduino IDE"
+    "Java",
+    "Python",
+    "C",
+    "Spring Boot",
+    "Spring MVC",
+    "Spring Security",
+    "Spring Data JPA",
+    "Hibernate",
+    "REST APIs",
+    "MySQL",
+    "HTML5",
+    "CSS3",
+    "GitHub",
+    "Postman",
+    "Maven",
+    "VS Code",
+    "IntelliJ IDEA",
+    "YOLOv8",
+    "OpenCV",
+    "Arduino IDE"
   ],
   "projects": [
     {
       "title": "Crypto Tracker – Real-Time Price Monitoring",
       "date": "Dec 2025",
       "description": "Built a real-time cryptocurrency tracker where users can enter any coin name and fetch live prices using an external API. Developed REST endpoints and integrated API responses into a dynamic UI using Spring Boot + Thymeleaf. Implemented service-layer logic for API consumption and JSON parsing.",
-      "tags": ["Spring Boot", "Thymeleaf", "REST API", "Java", "Railway"],
+      "tags": [
+        "Spring Boot",
+        "Thymeleaf",
+        "REST API",
+        "Java",
+        "Railway"
+      ],
       "image": "crypto_tracker.png"
     },
     {
       "title": "Student Management System",
       "date": "Nov 2025",
       "description": "Developed a web-based system to add, view, update, and manage student records. Built backend APIs using Spring Boot (CRUD operations). Integrated APIs with a simple frontend UI to display real-time student data. Implemented form handling and validation.",
-      "tags": ["Spring Boot", "CRUD", "REST API", "MySQL", "Render"],
+      "tags": [
+        "Spring Boot",
+        "CRUD",
+        "REST API",
+        "MySQL",
+        "Render"
+      ],
       "image": "student_management.png"
     },
     {
@@ -66,14 +94,21 @@
       "date": "Feb 2025",
       "description": "We received the prize and recognized it as a patent gem in Advantage Vidarbha 2K25 for our team project Social Forensic."
     },
-     {
+    {
       "title": "Landslide Prediction System",
-        "date": "Jul 2025 - Nov 2025",
-        "description": "A real-time landslide monitoring system that uses sensors and AI to detect risk and give early alerts for safer disaster response.",
-        "tags": ["AI/ML", "Python", "Arduino", "Streamlit"]
+      "date": "Jul 2025 - Nov 2025",
+      "description": "A real-time landslide monitoring system that uses sensors and AI to detect risk and give early alerts for safer disaster response.",
+      "tags": [
+        "AI/ML",
+        "Python",
+        "Arduino",
+        "Streamlit"
+      ]
     }
   ],
   "certifications": [
+    "Java Backend Developer - GeekforGeeks",
+    "Java Full Stack Developer - ProfoundEdutech",
     "The Complete Python Developer Certification Course - Udemy",
     "Data Analytics with Python - NPTEL",
     "National Intellectual Property Awareness Mission (NIPAM)",
