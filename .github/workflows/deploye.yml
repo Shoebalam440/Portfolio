@@ -1,0 +1,28 @@
+name: Deploye portfolio
+
+on:
+  push:
+     branches:
+         -main
+
+jobs:
+    deploye:
+       runs-on: ubuntu-latest
+       
+       environment:
+         name: github-pages
+         url: ${{ steps.deployment.outputs.page_url }}
+ 
+       steps:
+          - name: Checkout Repository
+            uses: actions/checkout@v4
+
+          - name: Upload Website
+            uses: actions/upload-pages-artifact@v4
+            with:
+              path: .
+
+          - name: deploye to github pages
+            id: deployement
+            uses: actions/deploye-pages@v4
+       
